@@ -1,8 +1,9 @@
-import type { PluginContext, PluginInfo, HTMLMdNode } from "@toast-ui/editor";
+import type { PluginContext, PluginInfo, HTMLMdNode, I18n } from "@toast-ui/editor";
 import type { Transaction, Selection, TextSelection } from "prosemirror-state";
 import type { Attr, Mark, PluginOptions } from "@t/index";
 import type { Context } from "@toast-ui/editor/types/toastmark";
 import "./css/plugin.css";
+import { addLangs } from "./i18n/langs";
 
 const FONT_SIZES = [8, 9, 10, 11, 12, 14, 16, 18, 24, 30, 36, 48, 60, 72, 96];
 
@@ -27,7 +28,7 @@ function creaetFontSizeDropDown() {
   return dropDownContainer;
 }
 
-function createToolbarItemOption(dropDown: HTMLDivElement) {
+function createToolbarItemOption(dropDown: HTMLDivElement, i18n: I18n) {
   return {
     name: "font-size",
     text: "F",
@@ -126,7 +127,7 @@ export default function fontSizePlugin(
   context: PluginContext,
   options: PluginOptions = {}
 ): PluginInfo {
-  const { eventEmitter, pmState } = context;
+  const { eventEmitter, i18n, pmState } = context;
 
   eventEmitter.listen("focus", (editType) => {
     containerClassName = `toastui-editor-${
@@ -137,6 +138,7 @@ export default function fontSizePlugin(
   const container = document.createElement("div");
 
   const inputForm = createInput();
+  addLangs(i18n);
 
   inputForm.onsubmit = (ev) => {
     ev.preventDefault();
@@ -173,7 +175,7 @@ export default function fontSizePlugin(
 
   container.appendChild(dropDown);
 
-  const toolbarItem = createToolbarItemOption(container);
+  const toolbarItem = createToolbarItemOption(container, i18n);
 
   return {
     markdownCommands: {
