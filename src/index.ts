@@ -32,7 +32,7 @@ function createToolbarItemOption(dropDown: HTMLDivElement, i18n: I18n) {
   return {
     name: "font-size",
     text: "F",
-    tooltip: "Font Size",
+    tooltip: i18n.get("Font Size"),
     style: { background: "none", fontSize: "20px" },
     popup: {
       body: dropDown,
