@@ -15,10 +15,10 @@
     "font size"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/paerck25/tui-editor-plugin-font-size",
+  "homepage": "https://github.com/DRW-NoahAnleitner/tui-editor-plugin-font-size",
   "repository": {
     "type": "git",
-    "url": "https://github.com/paerck25/tui-editor-plugin-font-size.git"
+    "url": "https://github.com/DRW-NoahAnleitner/tui-editor-plugin-font-size.git"
   },
   "author": {
     "name": "paerck25"
