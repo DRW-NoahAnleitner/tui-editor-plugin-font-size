@@ -8,11 +8,7 @@ based on [@toast-ui/editor-plugin-color-syntax](https://github.com/nhn/tui.edito
 ### Install
 
 ```sh
-$ npm install tui-editor-plugin-font-size
-
-or
-
-$ yarn add tui-editor-plugin-font-size
+$ npm install git+https://github.com/DRW-NoahAnleitner/tui-editor-plugin-font-size#main
 ```
 
 ### Usage
